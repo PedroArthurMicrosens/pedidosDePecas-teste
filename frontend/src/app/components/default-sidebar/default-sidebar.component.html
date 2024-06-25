@@ -1,0 +1,54 @@
+<section class="menu">
+    <div class="menu-sidebar">
+        <ul>
+            <li *ngIf="userType === 'ADMIN' || userType === 'TECNICO' || userType === 'SUPERTECNICO'">
+                <a routerLink="/pecas-pendentes" routerLinkActive="active">
+                    <div>
+                        <img src="/assets/peca-pendente.svg">
+                        Peças Pendentes
+                    </div>
+                </a>
+            </li>
+            <li *ngIf="userType === 'ADMIN' || userType === 'USER' || userType === 'SUPERTECNICO'">
+                <a routerLink="/realizar-pedido" routerLinkActive="active">
+                    <div>
+                        <img src="/assets/lanca-peca.svg">
+                        Lançar Peças
+                    </div>
+                </a>
+            </li>
+            <li *ngIf="userType === 'ADMIN' || userType === 'USER' || userType === 'SUPERTECNICO'">
+                <a routerLink="/cadastrar-pecas" routerLinkActive="active">
+                    <div>
+                        <img src="/assets/cadastra-peca.svg">
+                        Cadastrar peças
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/historico" routerLinkActive="active">
+                    <div>
+                        <img src="/assets/historico.svg">
+                        Histórico de Pedidos
+                    </div>
+                </a>
+            </li>
+            <li *ngIf="userType === 'ADMIN' || userType === 'FATURAMENTO'">
+                <a routerLink="/pedidos-concluidos" routerLinkActive="active">
+                    <div>
+                        <img src="/assets/faturamento.svg">
+                        Pedidos para faturar
+                    </div>
+                </a>
+            </li>
+            <li *ngIf="userType === 'ADMIN'">
+                <a routerLink="/configuracoes" routerLinkActive="active">
+                    <div>
+                        <img src="/assets/configuracoes.svg">
+                        Configurações
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

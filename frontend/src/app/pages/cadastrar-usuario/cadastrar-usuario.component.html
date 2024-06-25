@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuários</title>
+</head>
+<body>
+    <app-default-header
+    title="Cadastrar Usuários"
+    
+    ></app-default-header>
+    <main>
+    <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+
+        <section class="container">
+            <form [formGroup]="registerForm" class="dados" (ngSubmit)="cadastrarUsuario()">
+                <div class="container-principal">
+                    <div class="container-principal-top">
+                        <h5>Cadastro Usuários</h5>
+                    </div>
+                    <div class="container-principal-main">
+                        <div class="container-principal-main-formulario">
+                            <div class="container-principal-main-formulario-itens">
+                                <p>USUÁRIO:</p>
+                                <input type="text" placeholder="Usuário..."  formControlName="username">
+                            </div>
+                            <div class="container-principal-main-formulario-itens">
+                                <p>PERMISSÃO:</p>
+                                <div class="container-principal-main-formulario-selecionar">
+                                    <label>
+                                        <select name="PERMISSAO" formControlName="role">
+                                            <option value="ADMIN">ADMIN</option>
+                                            <option value="USER">USER</option>
+                                            <option value="SUPERTECNICO">SUPERTECNICO</option>
+                                            <option value="TECNICO">TECNICO</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-principal-main-formulario">
+                            <div class="container-principal-main-formulario-itens">
+                                <p>SENHA:</p>
+                                <input type="password" placeholder="Senha..." formControlName="password">
+                            </div>
+                            <div class="container-principal-main-formulario-itens">
+                                <p>CONFIRMAR SENHA:</p>
+                                <input type="password" placeholder="Senha..." formControlName="password_2">
+                            </div>
+                            <div *ngIf="senhaNaoIguais" class="alert alert-danger">
+                                As senhas não são iguais. Por favor, verifique e tente novamente.
+                              </div>
+                              
+                        </div>
+                    </div>
+                </div>
+                <div class="dados-botoes">
+                    <div class="dados-botoes-limpar"><button class="dados-botoes-limpar" type="reset"> <img src="/assets/cancelar.svg">Limpar</button></div>
+                    <div class="dados-botoes-confirmar"><button class="dados-botoes-confirmar" type="submit"><img src="/assets/confirmar.svg">Confirmar</button></div>
+                </div>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>

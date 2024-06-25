@@ -1,0 +1,111 @@
+.container{
+    width: 1070px;
+    height: 500px;
+    margin-left: 210px;
+    margin-top: 75px;
+    background-color: #fff;
+    border-radius: 16px;
+
+    .dados{
+        display: flex;
+        flex-direction: column;
+
+        .container-principal{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            .container-principal-top{
+                border-bottom: 2px solid #000;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                h5{
+                    padding-left: 50px;
+                    font-family: helvetica;
+                    font-size: 22px;
+                    margin: 0;
+                }
+            }
+
+            .container-principal-main{
+                height: 448px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 120px;
+
+                .container-principal-main-formulario{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 50px;
+                    font-size: 18px;
+
+                    .container-principal-main-formulario-itens{
+                        font-family: helvetica;
+
+                        input{
+                            width: 420px;
+                            height: 56px;
+                            background-color: #EAEAEA;
+                            border-radius: 12px;
+                            font-size: 20px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        .dados-botoes{
+            display: flex;
+            justify-content:space-around;
+            width: 1070px;
+            margin-top: 15px;
+
+            button{
+                width: 130px;
+                height: 45px;
+                font-family: helvetica;
+                font-size: 20px;
+                cursor: pointer;                               
+                transition: box-shadow 0.3s ease;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+              }
+
+              button:hover {
+                box-shadow: 10px 10px 2px #011e4b;
+              }
+              
+            .dados-botoes-limpar{
+                background-color: #fff;
+                border-radius: 8px;
+                border: 3px solid red;
+                }
+
+            .dados-botoes-confirmar{
+                background-color: #fff;;
+                border-radius: 8px;
+                border: 3px solid #01811f;
+            }
+
+        }
+
+    }
+
+}
+
+@media(width <= 1536px) {
+  .container{
+    margin-left: 150px;
+    margin-top: 40px;
+  }
+}

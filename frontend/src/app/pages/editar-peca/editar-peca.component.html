@@ -1,0 +1,23 @@
+<body><h2 mat-dialog-title>Editar Peça</h2>
+<mat-dialog-content class="forms">
+    <mat-form-field>
+        <mat-label>Item</mat-label>
+        <input matInput [(ngModel)]="data.codPecaDatasul" type="number">
+    </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descrição</mat-label>
+    <input matInput [(ngModel)]="data.nomePeca">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Part Number</mat-label>
+    <input matInput [(ngModel)]="data.partNumber">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Fabricante</mat-label>
+    <input matInput [(ngModel)]="data.fabricante">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="edit()">Salvar</button>
+</mat-dialog-actions></body>

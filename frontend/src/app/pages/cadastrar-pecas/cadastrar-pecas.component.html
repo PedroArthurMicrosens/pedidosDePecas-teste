@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Peças</title>
+</head>
+<body>
+    <app-default-header
+    title="Cadastrar Peças"
+    ></app-default-header>
+    <main>
+    <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+
+        <section class="container">
+            <form [formGroup]="pecasRegisterForm" Class="dados" (ngSubmit)="cadastrarPeca()">
+                <div class="container-principal">
+                    <div class="container-principal-top">
+                        <h5>Preencha com as informações da peça:</h5>
+                    </div>
+                    <div class="container-principal-main">
+                        <div class="container-principal-main-formulario">
+                            <div class="container-principal-main-formulario-itens">
+                                <p>PEÇA:</p>
+                                <input type="text" placeholder="Peça..." formControlName="nome_peca">
+                            </div>
+                            <div class="container-principal-main-formulario-itens">
+                                <p>PART NUMBER:</p>
+                                <input type="text" placeholder="Part Number..." formControlName="partNumber">
+                            </div>
+                        </div>
+                        <div class="container-principal-main-formulario">
+                            <div class="container-principal-main-formulario-itens">
+                                <p>CÓDIGO DO ITEM:</p>
+                                <input type="number" placeholder="Código do item..." formControlName="codPecaDatasul">
+                            </div>
+                            <div class="container-principal-main-formulario-itens">
+                                <p>FABRICANTE:</p>
+                                <input type="text" placeholder="Fabricante..." formControlName="fabricante">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dados-botoes">
+                    <button class="dados-botoes-limpar" type="reset"><img src="/assets/cancelar.svg">Limpar</button>
+                    <button class="dados-botoes-confirmar" type="submit"><img src="/assets/confirmar.svg">Confirmar</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>

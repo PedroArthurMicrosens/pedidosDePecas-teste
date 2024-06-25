@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Pedidos</title>
+</head>
+<body>
+    <app-default-header
+    title="Gerenciar Pedidos"
+    
+    ></app-default-header>
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+        <section>
+            <div class="table">
+                <div class="table__top">
+                    <a href="/realizar-pedido">
+                        <div class="table__top__left">
+                            <img src="/assets/lanca-peca.svg">
+                            <p>Realizar Pedido</p>
+                        </div>
+                    </a>
+                    <a href="/historico">
+                        <div class="table__top__right">
+                            <img src="/assets/historico.svg">
+                            <p>Pedidos Realizados</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="table__middle">
+                    <a href="/pecas-pendentes">
+                        <div class="table__middle__left">
+                            <img src="/assets/peca-pendente.svg">
+                            <p>Pedidos pendentes técnicos</p>
+                        </div>
+                    </a>
+                    <a href="/pedidos-concluidos">
+                        <div class="table__middle__right">
+                            <img src="/assets/faturamento.svg">
+                            <p>Pedidos pendentes faturamento</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="table__botton">
+                    <a href="/cancelar-pedidos">
+                        <div class="table__botton__right">
+                            <img src="/assets/deletar-peca.svg">
+                            <p>Cancelar Pedidos</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

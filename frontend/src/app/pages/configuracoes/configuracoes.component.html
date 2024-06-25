@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuracoes</title>
+</head>
+<body>
+    <app-default-header
+    title="Configurações"
+    ></app-default-header>
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+        <section class="configuracoes">
+        <p>Coloque o tempo em minutos:</p>
+        <div>
+            <form [formGroup]="attForm" (ngSubmit)="alterAttPecas()">
+                <input type="number" placeholder="tempo..." formControlName="valor">
+                <button type="submit">Alterar</button>
+            </form>
+            <button (click)="mostraAtt()">Visualizar</button>
+        </div>
+    </section>
+    </main>
+</body>
+</html>

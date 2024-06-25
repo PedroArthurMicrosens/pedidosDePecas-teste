@@ -1,0 +1,17 @@
+<header>
+    <button (click)="home()" class="img-microsens"></button>
+    <div class="cabecalho">
+        <div class="cabecalho-title">
+            <h5>{{ title }}</h5>
+        </div>
+        <button (click)="submitLogout()" class="cabecalho-user">
+            <div class="img_user">
+                <img src="/assets/user.svg">
+            </div>
+            <div class="text_user">
+                <p> {{ authService.getLoggedInUsername() }} </p>
+                <p class="text_user_sair">Sair</p>
+            </div>
+        </button>
+    </div>
+</header>

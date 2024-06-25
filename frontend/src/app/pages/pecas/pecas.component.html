@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pecas</title>
+</head>
+<body>
+    <app-default-header
+    title="Peças Cadastradas"
+    ></app-default-header>
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+        <section>
+            <div class="principal">
+                <div class="container-principal-top">
+                    <h5>Filtro:</h5>
+                    <div class="container-principal-top-pesquisa">
+                      <input type="number" placeholder="Item..." [(ngModel)]="codPecaDatasul" (input)="getPecasPorItem()">
+                      <input type="text" placeholder="Descrição..." [(ngModel)]="nomePeca" (input)="getPecasPorDescricao()">
+                      <input type="text" placeholder="Part Number..." [(ngModel)]="partNumber" (input)="getPecasPorPartnumber()">
+                      <input type="text" placeholder="Fabricante..." [(ngModel)]="fabricante" (input)="getPecasPorFabricante()">
+                    </div>
+                </div>
+                <div class="tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Item</th>
+                              <th>Descrição</th>
+                              <th>Part Number</th>
+                              <th>Fabricante</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pecas of pecas">
+                              <td class="numero">{{ pecas.codPecaDatasul }}</td>
+                              <td class="texto">{{ pecas.nomePeca }}</td>
+                              <td class="texto">{{ pecas.partNumber }}</td>
+                              <td class="numero">{{ pecas.fabricante }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                        <!-- <button (click)="finalizarPedido()">CONCLUIR</button> -->
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

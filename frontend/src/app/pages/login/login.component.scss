@@ -1,0 +1,138 @@
+@font-face {
+    font-family: titulo;
+    src: url(Venturas.otf)
+  }
+
+@mixin flex-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*{
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+  }
+
+
+body{
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: url('/assets/background-login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.section-rigth{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    
+}
+
+.section-rigth-title{
+    font-size: 100px;
+    //color:color-mix(in srgb-linear, #232E66 50%, #18488F 50%);//linear-gradient(#232E66, #18488F);
+    color: black;
+    
+    font-family: titulo;
+    font-style:italic;
+    @include flex-center;
+}
+
+.subtitulo{
+  font-family:'Lucida Sans Regular';
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.section-rigth-rectangle{
+    background: linear-gradient(#232E66, #18488F);
+    height: 65vh;
+    width: 485px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+  .section-rigth-login{
+    @include flex-center;
+    padding: 30px;
+    gap: 45px;
+    position: relative;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      transform: translateY(-490%);
+      width: 24px;
+      height: auto;
+    }
+    input {
+      padding-left: 38px;
+      height: 59px;
+      width: 380px;
+      border-radius: 16px;
+      font-size: 18px;
+    }
+    .section-rigth-login-password img {
+      transform: translateY(-60%);
+    }
+  }
+
+  button{
+    width: 183px;
+    height: 60px;
+    background-color: #3D6690;
+    border-radius: 20px;
+    border: none;
+    font-size: 24px;
+    color: #ffffff;
+    font-family: Helvetica;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+
+  button:hover {
+    box-shadow: 8px 8px 0px #ffffff;
+  }
+
+  .alert-danger{
+    display: flex;
+    width: 450px;
+    padding: 15px;
+
+
+    .alert-danger-rectangle{
+      background-color: red;
+      width: 15px;
+    }
+
+    .alert-danger-text{
+      background-color: #ffffff;
+      font-size: 18px;
+      font-family: helvetica;
+      border-radius: 0px 6px 6px 0px;
+    }
+
+  }

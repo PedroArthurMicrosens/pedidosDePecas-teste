@@ -1,0 +1,116 @@
+main{
+    display: flex;
+    flex-direction: row;
+    background-color: #3D669066;
+
+    .principal{
+        width: 1070px;
+        height: 680px;
+        margin-left: 200px;
+        margin-top: 50px;
+        background-color: #fff;
+        border-radius: 20px;
+
+        .container-principal-top{
+            display: flex;
+            align-items:first center;
+            gap: 50px;
+            border-bottom: 2px solid #000;
+            height: 50px;
+            h5{
+                margin-left: 50px;
+                font-family: helvetica;
+                font-size: 18px;
+            }
+
+            .container-principal-top-pesquisa{
+                display: flex;
+                width: 800px;
+                gap: 22px;
+
+                input{
+                    width: 125px;
+                    height: 30px;
+                    border-radius: 16px;
+                    border-style:solid;
+                }
+
+                button{
+                    background-color: transparent;
+                    border-radius: 18px;
+                }
+
+            }
+
+        }
+
+        .tabela {
+          max-height: 590px;
+                overflow-y: auto;
+            table {
+              width: 100%;
+              border-collapse: collapse;
+
+              th, td {
+                padding: 8px;
+                border: 1px solid #ddd;
+                text-align: left;
+              }
+
+              th {
+                background-color: #f2f2f2;
+              }
+
+              tr:nth-child(even) {
+                background-color: #f2f2f2;
+              }
+
+              tr:hover {
+                background-color: #ddd;
+              }
+            }
+
+
+          }
+
+          .pagination {
+            // margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+            width: 1070px;
+
+
+             button {
+
+               padding: 6px 6px;
+               margin-top: 4px;
+               margin-right: 18px;
+               border: 1px solid #ddd;
+               background-color: #f2f2f2;
+               cursor: pointer;
+               border-radius: 4px;
+
+               &:hover {
+                 background-color: #ddd;
+               }
+
+               &:disabled {
+                 cursor: not-allowed;
+                 opacity: 0.5;
+               }
+             }
+           }
+
+
+
+}}
+
+@media(width <= 1536px){
+  main{
+    .principal{
+      width: 69vw;
+      height: 65vh;
+      margin-left: 150px;
+    }
+  }
+}

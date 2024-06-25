@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <app-default-header
+    title="Dashboard"
+    
+    ></app-default-header>
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+            <section class="principal">
+                <div class="principal-container">
+                        <a href="/gerenciar-pedidos"><div class="principal-container-superior">
+                            <img src="/assets/gerenciar-pedidos.svg">
+                            <h2>Gerenciar Pedidos</h2>
+                        </div></a>
+                        <div class="principal-container-inferior">
+                            <a href="/gerenciar-pecas" class="principal-container-inferior-pecas">
+                                <h2>Gerenciar Peças</h2>
+                                <img src="/assets/gerenciar-pecas.svg">
+                            </a>
+                            <a href="/gerenciar-usuarios">
+                                <h2>Gerenciar Usuários</h2>
+                                <img src="/assets/gerenciar-usuario.svg">
+                            </a>
+                        </div>
+                </div>
+            </section>
+        </main>
+</body>
+</html>

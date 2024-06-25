@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pecas Pendentes</title>
+</head>
+<body>
+    <app-default-header
+    [title]="'Histórico de pedidos'"
+    ></app-default-header>
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+        <section>
+            <div class="principal">
+                <div class="container-principal-top">
+                    <h5>Filtro:</h5>
+                    <div class="container-principal-top-pesquisa">
+                      <input type="number" placeholder="Pedido..." [(ngModel)]="id_pedido" (input)="getPedidosPorPedido()"> <!--(input)="getPedidosPendentesPorPedido()"-->
+                      <input type="number" placeholder="Item..." [(ngModel)]="cod_PECA_DATASUL" (input)="getPedidosPorItem()">
+                      <input type="text" placeholder="Descrição..." [(ngModel)]="nome_peca" (input)="getPedidosPorDescricao()">
+                      <input type="text" placeholder="Part Number..." [(ngModel)]="part_number" (input)="getPedidosPorPartnumber()">
+                      <input type="number" placeholder="OS..." [(ngModel)]="ordem_servico" (input)="getPedidosPorOs()">
+                    </div>
+                </div>
+                <div class="tabela">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Pedido</th>
+                            <th>Item</th>
+                            <th>Descrição</th>
+                            <th>Solicitante</th>
+                            <th>Part Number</th>
+                            <th>Fabricante</th>
+                            <th>Ordem de Serviço</th>
+                            <th>Status</th>
+                            <th>Data Solicitação</th>
+                            <th>Data Finalização</th>
+                            <th>Técnico</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pedido of pedidos">
+                              <td class="numero">{{ pedido.id_pedido }}</td>
+                              <td class="numero">{{ pedido.cod_PECA_DATASUL }}</td>
+                              <td class="text">{{ pedido.nome_peca }}</td>
+                              <td class="text">{{ pedido.usuarios_abertura }}</td>
+                              <td class="text">{{ pedido.part_number }}</td>
+                              <td class="text">{{ pedido.fabricante }}</td>
+                              <td class="numero">{{ pedido.ordem_servico }}</td>
+                              <td class="text">{{ pedido.status }}</td>
+                              <td>{{ pedido.data_pedidos }}</td>
+                              <td>{{ pedido.data_fechamento }}</td>
+                              <td>{{ pedido.usuarios_fechamento }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

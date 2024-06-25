@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+</head>
+<body>
+    <app-default-header
+    title="Usuários"
+    ></app-default-header>
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+        <section>
+            <div class="principal">
+                <div class="container-principal-top">
+                    <h5>Filtro:</h5>
+                    <div class="container-principal-top-pesquisa">
+                      <input type="text" placeholder="Usuário..." [(ngModel)]="username" (input)="getUsuariosPorUsername()">
+                     </div>
+                </div>
+                <div class="tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Selecionar</th>
+                              <th>Usuário</th>
+                              <th>Permissão</th>
+                              <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let usuarios of usuarios">
+                              <td><input type="checkbox"  [(ngModel)]="usuarios.selecionado"></td>
+                              <td class="texto">{{ usuarios.username }}</td>
+                              <td class="texto">{{ usuarios.role }}</td>
+                              <td class="texto">{{ usuarios.non_locked_name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                        <button class="inativar" (click)="inativaUsuario()">INATIVAR</button>
+                        <button class="ativar" (click)="ativaUsuario()">ATIVAR</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

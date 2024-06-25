@@ -1,0 +1,112 @@
+@mixin flex-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    background-color: #3D669066;
+    display: flex;
+    flex-direction: row;
+    height: 92vh;
+    width: 100vw;
+
+    .principal{
+        a{
+            font-family: helvetica;
+            color: #000;
+            text-decoration: none;
+        }
+        width: 117vw;
+
+        .principal-container{
+            width: 60vw;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 20px;
+            margin-left: 13vw;
+            margin-top: 10vh;
+
+            .principal-container-superior{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 250px;
+                height: 31.5vh;
+                border-bottom: 2px solid #000;
+                padding-bottom: 20px;
+
+            }
+
+            .principal-container-inferior{
+                display: flex;
+                align-items: center;
+                height: 31.5vh;
+              a{
+                width: 30vw;
+                height: 285px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              }
+              .principal-container-inferior-pecas{
+                border-right:2px solid #000;
+              }
+                
+
+            }
+        }
+    }
+}
+
+@media (width <=1536px) {
+  main {
+    .principal {
+      .principal-container {
+        .principal-container-superior{
+          height: 27vh;
+          img{
+            height: 25vh;
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+
+// .principal-container-inferior-pecas{
+//   width: 28vw;
+//   height: 289px;
+//   display: flex;
+//   flex-direction: column-reverse;
+//   align-items: center;
+//   border-right: 2px solid #000;
+//   height: 100%;
+// }
+
+// .principal-container-inferior-usuarios{
+//   width: 28vw;
+//   height: 289px;
+//   display: flex;
+//   flex-direction: column-reverse;
+//   align-items: center;
+//   height: 100%;
+
+// }

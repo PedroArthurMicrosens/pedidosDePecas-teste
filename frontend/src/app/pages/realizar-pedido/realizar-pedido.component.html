@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laçamento de Peças</title>
+</head>
+<body>
+    <app-default-header
+    title="Laçamento de Peças"
+    ></app-default-header>
+
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+
+        <section class="container">
+            <div class="dados" >
+                <div class="container-principal">
+                    <div class="container-principal-top">
+                        <h5>Pesquise por Item ou Part Number:</h5>
+                    </div>
+                    <div class="container-principal-main">
+                        <div class="container-principal-main-formulario">
+                            <div class="container-principal-main-formulario-itens">
+                                <p>CÓDIGO DO ITEM:</p>
+                                <input type="number" placeholder="Código do Item..." [(ngModel)]="cod_item">
+                            </div>
+                            <div class="container-principal-main-formulario-itens">
+                                    <div class="container-principal-main-formulario-readonly">
+                                        <p>PEÇA:</p>
+                                        <input type="text" [(ngModel)]="nome_peca" readonly>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="container-principal-main-formulario">
+                            <div class="container-principal-main-formulario-itens">
+                                <p>PART NUMBER:</p>
+                                <input type="text" placeholder="Part Number" [(ngModel)]="partNumber">
+                            </div>
+                            <div class="container-principal-main-formulario-itens-readonly">
+                                <p>FABRICANTE:</p>
+                                <input type="text" [(ngModel)]="fabricante" readonly>
+                            </div>
+                        </div>
+                        <div class="container-principal-main-formulario">
+                            <div class="container-principal-main-formulario-os">
+                                <p>ORDEM DE SERVIÇO:</p>
+                                <input type="number" placeholder="Ordem de Serviço..." [(ngModel)]="orderService">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dados-botoes">
+                    <div class="dados-botoes-limpar"><button class="dados-botoes-limpar" (click)="limparCampos()"> <img src="/assets/cancelar.svg">Limpar</button></div>
+                    <div class="dados-botoes-confirmar"><button class="dados-botoes-confirmar" (click)="solicitarPeca()"><img src="/assets/confirmar.svg">Confirmar</button></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

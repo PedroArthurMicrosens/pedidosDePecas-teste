@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pecas Pendentes</title>
+</head>
+<body>
+    <app-default-header
+    [title]="'Cancelar pedido'"
+    ></app-default-header>
+    <main>
+        <app-default-sidebar
+        [userType]="getRole()">
+        </app-default-sidebar>
+        <section>
+            <div class="principal">
+                <div class="container-principal-top">
+                    <h5>Filtro:</h5>
+                    <div class="container-principal-top-pesquisa">
+                      <input type="number" placeholder="Pedido..." [(ngModel)]="id_pedido" (input)="getPedidosPendentesPorPedido()"> <!--(input)="getPedidosPendentesPorPedido()"-->
+                      <input type="number" placeholder="Item..." [(ngModel)]="cod_PECA_DATASUL" (input)="getPedidosPendentesPorItem()">
+                      <input type="text" placeholder="Descrição..." [(ngModel)]="nome_peca" (input)="getPedidosPendentesPorDescricao()">
+                      <input type="text" placeholder="Part Number..." [(ngModel)]="part_number" (input)="getPedidosPendentesPorPartnumber()">
+                      <input type="number" placeholder="OS..." [(ngModel)]="ordem_servico" (input)="getPedidosPendentesPorOs()">
+                    </div>
+                </div>
+                <div class="tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Selecionar</th>
+                              <th>Pedido</th>
+                              <th>Item</th>
+                              <th>Descrição</th>
+                              <th>Part Number</th>
+                              <th>Ordem de Serviço</th>
+                              <th>Data Solicitação</th>
+                              <th>Status</th>
+                              <th>Usuário</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pedido of pedidos">
+                              <td><input type="checkbox"  [(ngModel)]="pedido.selecionado"></td>
+                              <td class="numero">{{ pedido.id_pedido }}</td>
+                              <td class="numero">{{ pedido.cod_PECA_DATASUL }}</td>
+                              <td class="texto">{{ pedido.nome_peca }}</td>
+                              <td class="texto">{{ pedido.part_number }}</td>
+                              <td class="numero">{{ pedido.ordem_servico }}</td>
+                              <td>{{ pedido.data_pedidos }}</td>
+                              <td>{{ pedido.status }}</td>
+                              <td>{{ pedido.usuarios_abertura }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                        <button (click)="finalizarPedido()">CONCLUIR</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

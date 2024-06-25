@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Pedidos</title>
+</head>
+<body>
+    <app-default-header
+    title="Gerenciar Pedidos"
+    
+    ></app-default-header>
+    <main>
+        <app-default-sidebar [userType]="getRole()"></app-default-sidebar>
+        <section>
+            <div class="table">
+                <div class="table__top">
+                    <a href="/cadastrar-usuario">
+                        <div class="table__top__left">
+                            <img src="/assets/add-user.svg">
+                            <p>Cadastrar usuários</p>
+                        </div>
+                    </a>
+                    <a href="/usuarios">
+                        <div class="table__top__right">
+                            <img src="/assets/user-list.svg">
+                            <p>Usuários cadastrados</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
